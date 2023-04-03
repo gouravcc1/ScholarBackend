@@ -20,11 +20,11 @@ const ScholarshipSchema = mongoose.Schema({
   imageCover: {
     type: String,
   },
-  createdAt: {
-    type: Date,
-    default: Date.now(),
-  },
-  startDates: [Date],
+  // createdAt: {
+  //   type: Date,
+  //   default: Date.now(),
+  // },
+  // startDates: [Date],
   state: {
     type: String,
     require: true,
