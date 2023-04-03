@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 // const AppError=require('./utils/AppError')
 // const globleErrorHandler=require('./controllars/errorControllar')
-// const TourRoute = require("./routes/tourroute");
+const ScholarshipRoute = require("./routes/ScholarshipRout");
 // const userRoute = require("./routes/userroute");
 dotenv.config({
   path: "./config.env",
@@ -26,7 +26,7 @@ mongoose
 
 app.use(express.json());
 
-// app.use("/api/v1/tours", TourRoute);
+app.use("/api/v1/Scholarships", ScholarshipRoute);
 // app.use("/api/v1/user",  userRoute);
 app.all('*',(req,res,next)=>{
 //    next(new AppError(`can't find ${req.originalUrl} on the server`,404));
