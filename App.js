@@ -1,5 +1,4 @@
 const express = require("express");
-const app = express();
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 // const AppError=require('./utils/AppError')
@@ -23,7 +22,7 @@ mongoose
   .then((con) => {
     console.log("success conection");
   });
-
+  const app = express();
 app.use(express.json());
 
 app.use("/api/v1/Scholarships", ScholarshipRoute);
