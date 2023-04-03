@@ -163,10 +163,16 @@ exports.GetAScholarship = async (req, res) => {
 exports.GetAScholarshipparsed = async (req, res) => {
   try {
     const { id } = req.params;
-    const tour = await Tour.findById(id);
+    const tour = await Tour.find({ count: { $eq: id } });
     res.status(200).json(
       tour
     );
+    // const states = await Tour.aggregate([
+    //   {$filter: {count:{$eq:id}}}
+    // ]);
+    // res.status(200).json({
+    //     states,
+    // });
   } catch (err) {
     res.status(404).json({
       status: "failed",

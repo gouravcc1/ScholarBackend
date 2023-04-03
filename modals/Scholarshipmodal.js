@@ -33,10 +33,11 @@ const ScholarshipSchema = mongoose.Schema({
     type: String,
     default: "India",
   },
-  link:{
-    type:String,
-    require:true
-  }
+  link: {
+    type: String,
+    require: true,
+  },
+  count: { type: Number, require: true },
 });
 // QUERY MIDDLEWARE
 // tourSchema.pre('find', function(next) {
