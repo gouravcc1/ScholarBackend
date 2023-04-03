@@ -74,9 +74,9 @@ exports.GetAllScholarshipparsed = async (req, res) => {
       .limilfields()
       .pagination();
     const tour = await Features.query;
-    res.status(200).json(
-        tour,
-    );
+    res.status(200).json({
+       tour: tour,
+  });
   } catch (err) {
     res.status(404).json({
       status: "failed",
