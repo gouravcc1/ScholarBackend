@@ -74,8 +74,7 @@ exports.GetAllScholarshipparsed = async (req, res) => {
       .limilfields()
       .pagination();
     const tour = await Features.query;
-    res.status(200).json( tour,
-  );
+    res.status(200).json(tour);
   } catch (err) {
     res.status(404).json({
       status: "failed",
@@ -154,6 +153,20 @@ exports.GetAScholarship = async (req, res) => {
         tour,
       },
     });
+  } catch (err) {
+    res.status(404).json({
+      status: "failed",
+      messege: "data not found",
+    });
+  }
+};
+exports.GetAScholarshipparsed = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const tour = await Tour.findById(id);
+    res.status(200).json(
+      tour
+    );
   } catch (err) {
     res.status(404).json({
       status: "failed",
